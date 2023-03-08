@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="uap rescap build" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2" xmlns:desktop3="http://schemas.microsoft.com/appx/manifest/desktop/windows10/3" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="AppleInc.AppleMusicWin" Publisher="CN=5BD5593D-A41B-4F89-884E-B4F3E0FBAA75" Version="1.0.9985.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>ms-resource:AppDisplayName_Preview_Alt</DisplayName>
+    <PublisherDisplayName>Apple Inc.</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19044.2604" MaxVersionTested="10.0.22621.0" />
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2" MinVersion="2000.684.1510.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.30704.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.30704.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="EN-US" />
+    <Resource uap:Scale="200" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="AppleMusic.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="ms-resource:AppDisplayName" Description="ms-resource:AppDescription" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile ShortName="ms-resource:AppShortName" Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" Wide310x150Logo="Images\Wide310x150Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="AppleMusic.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AppleMusic.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.appUriHandler">
+          <uap3:AppUriHandler>
+            <uap3:Host Name="applemusic.com" />
+            <uap3:Host Name="itunes.apple.com" />
+          </uap3:AppUriHandler>
+        </uap3:Extension>
+        <desktop3:Extension Category="windows.autoPlayHandler">
+          <desktop3:AutoPlayHandler>
+            <desktop3:InvokeAction ActionDisplayName="ms-resource:AutoPlay_CD_Create" ProviderDisplayName="Apple Music">
+              <desktop3:Content ContentEvent="HandleCDBurningOnArrival" Verb="burn" Parameters="/AutoPlayBurn &quot;%L;&quot;" />
+            </desktop3:InvokeAction>
+            <desktop3:InvokeAction ActionDisplayName="ms-resource:AutoPlay_CD_Play" ProviderDisplayName="Apple Music">
+              <desktop3:Content ContentEvent="PlayCDAudioOnArrival" Verb="play" Parameters="/playcd &quot;%L;&quot;" />
+            </desktop3:InvokeAction>
+            <desktop3:InvokeAction ActionDisplayName="ms-resource:AutoPlay_CD_Import" ProviderDisplayName="Apple Music">
+              <desktop3:Content ContentEvent="PlayCDAudioOnArrival" Verb="import" Parameters="/AutoPlayImportSongs &quot;%L;&quot;" />
+            </desktop3:InvokeAction>
+          </desktop3:AutoPlayHandler>
+        </desktop3:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".aifc" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/AIFC</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.aifc</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".aiff" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/AIFF</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.aiff</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".aif" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/AIF</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.aif</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".cda" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/CDA</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.cda</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".cdda" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/CDDA</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.cdda</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".itl" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/ITL</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.itl</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".itlp" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/ITLP</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.itlp</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".itms" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/ITMS</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:EditFlags OpenIsSafe="true" />
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-itunes-itms">.itms</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m3u8" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M3U8</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m3u8</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m3u" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M3U</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m3u</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m4a" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M4A</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m4a</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m4b" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M4B</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m4b</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m4p" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M4P</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m4p</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".m4r" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/M4R</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.m4r</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".mp2" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/MP2</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.mp2</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".mp3" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/MP3</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.mp3</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".pls" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/PLS</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.pls</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".rmp" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/RMP</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.rmp</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".wave" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/WAVE</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.wave</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name=".wav" Parameters="/open &quot;%1&quot;">
+            <uap:DisplayName>ms-resource:Resources/WAV</uap:DisplayName>
+            <uap:Logo>Images\FileAssociation.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.wav</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Play" Parameters="/play &quot;%1&quot;">Play</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="daap" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="italss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itals" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itmss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itms" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itpc" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itsradio" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.daap" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.italss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itals" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itlss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itls" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itmss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itms" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itpc" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itsradio" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itvlss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes.assocprotocol.itvls" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunesradio" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itvlss" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itvls" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="musics" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="music" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap3:Protocol Name="itunes" Parameters="/url &quot;%1&quot;">
+            <uap:Logo>Images\Square44x44Logo.png</uap:Logo>
+          </uap3:Protocol>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="LibraryServer" Executable="AMPLibraryAgent.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="AMPLibraryAgent" Description="AMPLibraryAgent" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="AMPLibraryAgent.exe" DisplayName="AMPLibraryAgent">
+              <com:Class Id="BCD4DA9E-3F45-42D8-9F19-89D4EF2D44FD" DisplayName="AMP.Core.IAMPMusicLibrary" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="SharedHelper" Executable="SharedHelper.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Apple Music" Description="Apple Music" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="SharedHelper.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AppleMusic_Helper.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="AppleInc.Music.Defaults" Executable="defaults.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Defaults" Description="Defaults" BackgroundColor="#FFFFFF" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AppleInc.Music.Defaults.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="defaults.exe">
+          <desktop:FullTrustProcess />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="allowElevation" />
+  </Capabilities>
+  <Extensions>
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="AppleMusic.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all" />
+        <desktop2:Rule Direction="in" IPProtocol="UDP" Profile="all" />
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="AMPLibraryAgent.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all" />
+        <desktop2:Rule Direction="in" IPProtocol="UDP" Profile="all" />
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+    <Extension Category="windows.publisherCacheFolders">
+      <PublisherCacheFolders>
+        <Folder Name="com.apple.MediaServices" />
+      </PublisherCacheFolders>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AMP.Services.dll</Path>
+        <ActivatableClass ActivatableClassId="AMP.Services.StartOrQueuePlaybackArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.NavigationService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.DialogService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AgentDebugService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.OtherPlayQueueSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.LoggingService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.DeviceService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AppContext" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.PlayQueue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.PageNotificationCenter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.Format" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.Prefs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.RadioMenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridEmptyCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridRowLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchResultsPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemSkipInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.NavigationControllerRootPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DefaultSectionHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TallArtworkPosterLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SidebarItemAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Spacer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ContainerDetailTracklistFooterLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FixedDetailListSectionHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.LinkComponentModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ColumnSectionHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.InfoPanelViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SquareArtworkPosterLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoArtworkDictionary" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FixedListSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SingleSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingFindFriendsPageLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PlayQueueItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AuxiliaryItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SectionChangeInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PageEventTrigger" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialCardLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.BubbleLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FlowcaseLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplacePageInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TrackLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FollowStateMapResponse" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TopSearchLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PageFooter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SectionEventTrigger" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoArtworkDictionaryItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VerticalVideoLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemProductPlacementInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.HorizontalPosterLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.InlineUpsellLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GroupedTextLinkSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TVShowDetailHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoFile" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemAdvisoryDescription" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TVMovieDescription" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ParagraphComponentModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoPlaybackCommands" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.CustomPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialProfileInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.LyricsSongInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ContentDescriptor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceSectionInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridTextCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AddItemsSectionInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchLibrarySeeAllPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TallArtworkBottom" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoArtwork" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ModalPresentationDescriptor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GroupTextListItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.NoOperationInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemRollInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingPrivacySettingsPageLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ContainerDetailHeaderAudioBadges" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TransportViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VolumeViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.NowPlayingViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.RadioPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridLikedDislikedCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridCloudDownloadCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.EqualizerViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PlayerState" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Link" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.LibraryPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ArtistDetailHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingSharedPlaylistLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TallArtworkTop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialProfileEditorHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.MainPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingWelcomePageLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.CatalogPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialProfile" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchLandingPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridEqualizerCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.NotImplementedLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingNotificationSettingsPageLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ShelfSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AlternateTrackInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.MenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ContainerDetailHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SidebarSectionHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ToggleMenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ActivityWindowViewItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemAdvisoryInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AlternateTrackMenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ComboBoxSeparatorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.BrowsePageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.MenuItemSeparator" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PosterLockupChin" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DiscardSectionInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.NowPlayingItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PopoverAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PageViewModelFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialOnboardingUserNameHandlePageLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchLibraryPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceHeaderInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ListenNowPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceItemsInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ListSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TVMovieDetailHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceDataGridColumnsInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GroupTextListLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Rule" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SubMenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PageHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GroupedListSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FilterResultsAccessoryItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridTitleCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AccountAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoDisplayFrameInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PlayQueueViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FixedGridSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FixedGroupedGridSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialBadgingMap" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SuperHeroLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SquareLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PageChangeInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SidebarSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SidebarItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.WebDialogViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.UpdateSocialProfileResponse" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.HeaderComponentModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GroupedItems" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoPlaybackViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SideListItemLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ComboBoxItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ArtistLatestReleaseLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.HyperlinkAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.HorizontalLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Artwork" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.CuratorDetailHeaderComponentModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SidebarLibraryEditItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.EmptyPageState" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialProfileDetailHeaderLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.VideoItemPhotosensitiveInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.AccessoryBadge" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceDataGridColumnSortInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SearchHintsLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.BrickLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TextListComponentModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.InlineEditParameter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridHeadingsViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ActionHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridColumnInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.CatalogItemDetailPageDestination" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.RelayCommand" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Chapter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ReplaceAccessoryItemsInstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.PlaylistSidebarMenuItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.MoreAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.TracklistLockup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.SocialProfileFindFriendsButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.GridSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.DataGridRatingCell" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FilterAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.LyricsViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.FixedDetailListSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.Playable" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommonModels.ViewOptionsAccessoryButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.NotificationArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.MenuPresenterService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.HistoryPlayQueueSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.NotificationCenter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.DefaultArtwork" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AppSettings" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.LibraryItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AMPMediaAppClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.FetchInvalidatedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AccountViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CloudLibraryService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.ArtworkService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.LibraryService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.Player" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.UpNextPlayQueueSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.Equalizer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.CommandResponse" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.NavigationStack" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.StoreCoreWebView2Service" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.ActivityService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.EQPreset" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.AutoplayPlayQueueSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.ServiceProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.Services.PlaybackService" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AMP.UI.Controls.dll</Path>
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TextBlock" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TickerTapeControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ListView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.RatioToPercentageConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NumericToStringConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ScrubberControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.KeyValuePair" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VersionStringConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowPositionChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Utilities" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StringToInverseVisConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.HoverGrid" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.RichEditBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.LicenseAgreementControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StyleSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.AskUserDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.AspectRatioGrid" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TwoLinesTextEditControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ResourceFormatterConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ComboBoxHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NavigationInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TileControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.HidingListBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowBorderInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ShelfView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Navigator" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.EmptyPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Span" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StringToVisConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.EQThumbToolTipValueConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.GridView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Hyperlink" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.DebugConsolePanel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VideoAdvisoryDescription" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowDPIChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TextTrimmingToBooleanConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NullToGridLengthConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BooleanToStringConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NonFocusableFlyout" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NavView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.SecondsToTimeStringConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ExtensibleMenuFlyout" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NumberRangeControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ScrollBar" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ContentDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowClosingEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.SliderWithDragState" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WebView2" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NonVirtualizingStackLayout" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowPresenterChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BindableSwapChainPanel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.SFSymbolToUnicodeConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VideoAdvisoryDescriptionText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.XamlMetaDataProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowSizeMoveModeChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BouncyBarControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowDestroyingEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TextBoxLoc" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VideoAdvisoryData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowPointerMovedInNonClientEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ThemeResources" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Window" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BooleanToVisibilityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NewAppInstanceActivatedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ComboBoxControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.FilterToggleButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StyleSelector" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VideoAdvisoryControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TwoLinesDateControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NotNullToVisibilityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ListViewBaseUtils" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TemplateSelector" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ProfilePicture" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StringToIInspectableConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NumberTextBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ChinView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VolumeAdjustmentToPercentageConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ClosableFlyout" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowMaximizeRequestedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NavigateBackCommand" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.SettingContainerView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.GridPresentation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.GreaterThanZeroToVisibilityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.AddConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.LovedDislikedControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BackDrop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.KeyValueConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.NavigationViewItemHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.MenuButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.RatingLovedDislikedControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.WindowStateChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.HeaderBar" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.OneLineTextEditControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.CommandToVisibilityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.ErrorPanel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.BooleanToInverseVisibilityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.StickyHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.OneNumberEditControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.Spinner" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TimeEditControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.DoubleNegationConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.VolumeControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.MoreDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Controls.TimeSpanToStringConverter" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AMP.UI.ViewModels.dll</Path>
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.CustomPageViewModelFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.StorePageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.ImportSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.FilesSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.MainSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.AdvancedSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.GeneralSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.PlaybackSettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.SettingsPageViewModel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.ViewModels.RestrictionsSettingsPageViewModel" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AMP.UI.Views.dll</Path>
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.EditRulesDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.XamlMetaDataProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.StorePage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.FlyoutMenuOpenStateChangingEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DebugWindow" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ActivityWindowControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.VerticalVideoLockupTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PlaybackSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DialogManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MainSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.GeneralSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.InfoPanelControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MiniPlayer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.Sidebar" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.LyricsView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ContentPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.VideoDisplayFrameChangedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.Breadcrumb" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PlayItemStatusButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PageDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.AccessoryItemTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MenuTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ComboBoxTemplatesAndStyles" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SearchTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DataGridTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SidebarItemTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.InfoPanelTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DataGridHeadingsControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.VideoPlaybackPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SearchPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ImportSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DataGridHeaderColumnTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.TrackLockupTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.NowPlayingControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PlayQueueView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.WelcomeDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ArtworkEditControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ComponentModelTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.LyricsListViewItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SearchHintsLockupTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.EqualizerDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DataGridRowControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.AccountControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ThemeResources" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SidebarLibraryTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.VideoPlaybackWindow" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MainPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.EqualizerView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.LibraryItemStatusButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.UIBroker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.RestrictionsSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ArtworkImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DebugKeyframeView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.EditRuleControlRow" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.InlineEditGrid" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PageTemplateSelectorItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SectionTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.AdvancedSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.WebDialogControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.SettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MiniPlayerView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.TransportControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.NavigationViewItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MusicConverters" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.XamlTypeInfoWorkaround" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ListViewBaseItemToKeyConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.FilesSettingsPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.InfoPanelItemsTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.MicaManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.LockupTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.AutoResizeWindow" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.PageTemplates" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.ActivityWindowItemStatusButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.Views.DataGridHeaderControl" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AMP.UI.dll</Path>
+        <ActivatableClass ActivatableClassId="AMP.UI.NavigationMenuItemHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.LocalizationService" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="AMP.UI.NavigationMenuItem" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+  <build:Metadata>
+    <build:Item Name="Microsoft.Build.DesktopBridge.Tasks.dll" Version="17.4.33118.351" />
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETFramework,Version=v4.5.1" />
+    <build:Item Name="VisualStudio" Version="17.0" />
+    <build:Item Name="OperatingSystem" Version="10.0.19041.1 (WinBuild.160101.0800)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="17.4.33122.133" />
+    <build:Item Name="ProjectGUID" Value="098a9900-68e7-4b0f-b3a3-3589f491587f" />
+    <build:Item Name="makepri.exe" Version="10.0.22621.1 (WinBuild.160101.0800)" />
+  </build:Metadata>
+  <mp:PhoneIdentity PhoneProductId="94ecb442-59b5-4ede-91c1-bfab5274164a" PhonePublisherId="5e3e28d9-4e58-479c-870b-2e5f6ad1310e" />
+</Package>

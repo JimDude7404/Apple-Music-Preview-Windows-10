@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- default ordered fallback list - fallback entity has to be PostScript name -->
+	<key>default</key>
+	<array>
+		<string>LucidaSansUnicode</string> <!-- MAKE sure this matches the kCTFontSystemFontType in CTFontDescriptorCreateForUIType() & TDescriptorSourceImp::CreateDefaultDescriptor()! -->
+		<string>SymbolMT</string>
+		<string>ArialMT</string>
+		<string>AngsanaNew</string>
+		<string>MicrosoftHimalaya</string><!-- Tibetan, Kailasa is the equivalent on iOS -->
+		<!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+		<array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>Meiryo</string>
+				<string>MS-Gothic</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>MicrosoftJhengHeiRegular</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>SimHei</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>Gulim</string>
+			</array>
+		</array>
+		<string>Vrinda</string>
+		<string>Mangal</string>
+		<string>Shruti</string><!-- GujaratiSangamMN is the equivalent on iOS -->
+		<string>Raavi</string><!-- GurmukhiMN is the equivalent on iOS -->
+		<string>Tunga</string>
+		<string>KhmerUI</string>
+		<string>LaoUI</string>
+		<string>Kartika</string>
+		<!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+		<string>Kalinga</string>
+		<string>IskoolaPota</string>
+		<string>Latha</string><!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+		<string>Gautami</string>
+		<string>Tahoma</string><!-- Armenian -->
+		<string>EuphemiaCAS</string>
+		<string>PlantagenetCherokee</string>
+	</array>
+	
+	<!-- ordered fallback list for sans-serif style - fallback entity has to be PostScript name -->
+	<key>sans-serif</key>
+	<array>
+		<string>LucidaSansUnicode</string>
+    <string>SymbolMT</string>
+    <string>ArialMT</string>
+    <string>AngsanaNew</string>
+    <string>MicrosoftHimalaya</string>
+    <!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+		<array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>Meiryo</string>
+				<string>MS-Gothic</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>MicrosoftJhengHeiRegular</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>SimHei</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>Gulim</string>
+			</array>
+		</array>
+    <string>Vrinda</string>
+    <string>Mangal</string>
+    <string>Shruti</string>
+    <!-- GujaratiSangamMN is the equivalent on iOS -->
+    <string>Raavi</string>
+    <!-- GurmukhiMN is the equivalent on iOS -->
+    <string>Tunga</string>
+    <string>KhmerUI</string>
+    <string>LaoUI</string>
+    <string>Kartika</string>
+    <!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+    <string>Kalinga</string>
+    <string>IskoolaPota</string>
+    <string>Latha</string>
+    <!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+    <string>Gautami</string>
+    <string>Tahoma</string>
+    <!-- Armenian -->
+    <string>EuphemiaCAS</string>
+    <string>PlantagenetCherokee</string>
+  </array>
+
+	<!-- ordered fallback list for serif style - fallback entity has to be PostScript name -->
+	<key>serif</key>
+	<array>
+		<string>TimesNewRomanPSMT</string>
+		<string>SymbolMT</string>
+		<string>TraditionalArabic</string>
+		<string>AngsanaNew</string>
+		<string>MicrosoftHimalaya</string><!-- Tibetan, Kailasa is the equivalent on iOS -->
+		<!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+		<array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>MS-Mincho</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>MingLiU</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>SimSun</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>BatangChe</string>
+			</array>
+		</array>
+    <string>Vrinda</string>
+    <string>Mangal</string>
+    <string>Shruti</string>
+    <!-- GujaratiSangamMN is the equivalent on iOS -->
+    <string>Raavi</string>
+    <!-- GurmukhiMN is the equivalent on iOS -->
+    <string>Tunga</string>
+    <string>KhmerUI</string>
+    <string>LaoUI</string>
+    <string>Kartika</string>
+    <!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+    <string>Kalinga</string>
+    <string>IskoolaPota</string>
+    <string>Latha</string>
+    <!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+    <string>Gautami</string>
+    <string>Tahoma</string>
+    <!-- Armenian -->
+    <string>EuphemiaCAS</string>
+    <string>PlantagenetCherokee</string>
+  </array>
+
+	<!-- ordered fallback list for monospace style - fallback entity has to be PostScript name -->
+	<key>monospace</key>
+	<array>
+		<string>LucidaConsole</string>
+    <string>SymbolMT</string>
+    <string>LucidaSansUnicode</string>
+    <string>SimplifiedArabicFixed</string>
+    <string>AngsanaNew</string>
+    <string>MicrosoftHimalaya</string>
+    <!-- Tibetan, Kailasa is the equivalent on iOS -->
+    <!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+    <array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>MS-Mincho</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>MingLiU</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>SimSun</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>BatangChe</string>
+			</array>
+		</array>
+    <string>Vrinda</string>
+    <string>Mangal</string>
+    <string>Shruti</string>
+    <!-- GujaratiSangamMN is the equivalent on iOS -->
+    <string>Raavi</string>
+    <!-- GurmukhiMN is the equivalent on iOS -->
+    <string>Tunga</string>
+    <string>KhmerUI</string>
+    <string>LaoUI</string>
+    <string>Kartika</string>
+    <!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+    <string>Kalinga</string>
+    <string>IskoolaPota</string>
+    <string>Latha</string>
+    <!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+    <string>Gautami</string>
+    <string>Tahoma</string>
+    <!-- Armenian -->
+    <string>EuphemiaCAS</string>
+    <string>PlantagenetCherokee</string>
+  </array>
+	
+	<!-- ordered fallback list for cursive style - fallback entity has to be PostScript name -->
+	<key>cursive</key>
+	<array>
+		<string>ComicSansMS</string>
+		<string>SymbolMT</string>
+		<string>ArabicTypesetting</string>
+		<string>AngsanaNew</string>
+		<string>MicrosoftHimalaya</string><!-- Tibetan, Kailasa is the equivalent on iOS -->
+		<!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+		<array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>MS-Mincho</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>DFKaiShu-SB-Estd-BF</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>KaiTi</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>BatangChe</string>
+			</array>
+		</array>
+    <string>Vrinda</string>
+    <string>Mangal</string>
+    <string>Shruti</string>
+    <!-- GujaratiSangamMN is the equivalent on iOS -->
+    <string>Raavi</string>
+    <!-- GurmukhiMN is the equivalent on iOS -->
+    <string>Tunga</string>
+    <string>KhmerUI</string>
+    <string>LaoUI</string>
+    <string>Kartika</string>
+    <!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+    <string>Kalinga</string>
+    <string>IskoolaPota</string>
+    <string>Latha</string>
+    <!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+    <string>Gautami</string>
+    <string>Tahoma</string>
+    <!-- Armenian -->
+    <string>EuphemiaCAS</string>
+    <string>PlantagenetCherokee</string>
+  </array>
+	
+	<!-- ordered fallback list for fantasy style - fallback entity has to be PostScript name -->
+	<key>fantasy</key>
+	<array>
+		<string>ComicSansMS</string>
+		<string>SymbolMT</string>
+		<string>ArabicTypesetting</string>
+		<string>AngsanaNew</string>
+		<string>MicrosoftHimalaya</string><!-- Tibetan, Kailasa is the equivalent on iOS -->
+		<!-- language preferred fallback list - to be reordered according to AppleLanguages preferences -->
+		<array>
+			<!-- language preferred entity - index 0: BCP 47 language code, index 1: PostScript name -->
+			<array>
+				<!-- Japanese -->
+				<string>ja</string>
+				<string>MS-Mincho</string>
+			</array>
+			<array>
+				<!-- Traditional Chinese -->
+				<string>zh-Hant</string>
+				<string>DFKaiShu-SB-Estd-BF</string>
+			</array>
+			<array>
+				<!-- Simplified Chinese -->
+				<string>zh-Hans</string>
+				<string>KaiTi</string>
+			</array>
+			<array>
+				<!-- Korean -->
+				<string>ko</string>
+				<string>BatangChe</string>
+			</array>
+		</array>
+    <string>Vrinda</string>
+    <string>Mangal</string>
+    <string>Shruti</string>
+    <!-- GujaratiSangamMN is the equivalent on iOS -->
+    <string>Raavi</string>
+    <!-- GurmukhiMN is the equivalent on iOS -->
+    <string>Tunga</string>
+    <string>KhmerUI</string>
+    <string>LaoUI</string>
+    <string>Kartika</string>
+    <!-- <string>MyanmarSangamMN</string> No Myanmanr fonts on Windows AFAICT -->
+    <string>Kalinga</string>
+    <string>IskoolaPota</string>
+    <string>Latha</string>
+    <!-- Tamil, TamilSangamMN is the equivalent on iOS -->
+    <string>Gautami</string>
+    <string>Tahoma</string>
+    <!-- Armenian -->
+    <string>EuphemiaCAS</string>
+    <string>PlantagenetCherokee</string>
+  </array>
+	
+</dict>
+</plist>
