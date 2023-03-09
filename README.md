@@ -11,6 +11,14 @@ Well you can goto the releases page and there will be a .zip containing all of t
 Yup here is a screenshot
 ![image](https://user-images.githubusercontent.com/67085206/223883564-37f2f55d-3ded-4346-ae85-df2158951a7c.png)
 
+# Installation
+Download the latest .zip from releases, extract it. Then run setup.bat. Just double-click it. 
+
+#Troubleshooting
+Sometimes there may be UWP apps running or services that are running that the script cannot stop. A simple way to fix this is to go into Task Manager and Goto the "Startup" tab. And disable everything, then reboot
+![image](https://user-images.githubusercontent.com/67085206/223894763-29496db7-a079-42a6-8be5-f4e6013214fd.png)
+ 
+
 # Known issues: 
 None that I know of :D. At least none that aren't in the app itself. They can be replicated on Windows 11 as well.
 
