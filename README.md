@@ -16,7 +16,7 @@ Download the latest .zip from releases, extract it. Then run setup.bat. Just dou
 
 # Troubleshooting
 Sometimes there may be UWP apps running or services that are running that the script cannot stop. A simple way to fix this is to go into Task Manager and Goto the "Startup" tab. And disable everything, then reboot
-![image](https://user-images.githubusercontent.com/67085206/223894763-29496db7-a079-42a6-8be5-f4e6013214fd.png)
+![image](https://user-images.githubusercontent.com/67085206/223895890-745c48c3-02c7-477e-b2e0-42cc0ac38e77.png)
 
 You can re-enable these after your done installing. 
 
