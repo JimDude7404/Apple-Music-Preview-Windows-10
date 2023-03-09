@@ -13,3 +13,6 @@ Yup here is a screenshot
 
 # Known issues: 
 None that I know of :D. At least none that aren't in the app itself. They can be replicated on Windows 11 as well.
+
+# Notes:
+ - This has not been tested on any Windows 10 version before 21H2. But it *should* work just fine. As the system files from 2004 and beyond are the same. 
