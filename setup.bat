@@ -18,10 +18,12 @@ xcopy "%source%" "%dest%" /s /i /q
 taskkill /F /IM ApplicationFrameHost.exe >nul 2>&1
 :: Kills Gaming Service, it likes to get in the way
 powershell -Command "Stop-Service -Name GamingServices"
+taskkill /f /im gamingservices.exe
 :: Register AppxManifest.xml
 echo Registering AppxManifest.xml...
 powershell -Command "Add-AppxPackage -Register '%userprofile%\Documents\AppleMusicClient\AppxManifest.xml'"
 taskkill /F /IM ApplicationFrameHost.exe >nul 2>&1
+taskkill /f /im gamingservices.exe
 :: Install dependencies
 echo Installing dependencies...
 for %%f in ("%~dp0*.appx") do (
