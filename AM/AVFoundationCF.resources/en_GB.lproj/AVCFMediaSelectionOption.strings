@@ -1,0 +1,15 @@
+/* When a subtitle has a title in its metadata, arrange the language code next to it, e.g. "Director's Commentary - English" */
+"SUBTITLE_TRACK_DISPLAY_FORMAT" = "%1$@ - %2$@";
+
+/* Use this as the subtitle's language name if it's missing */
+"UNKNOWN_LANGUAGE" = "Unknown";
+
+/* Append a characteristic to a subtitle display name, e.g. "Director's Commentary (English) Easy Reader DVS" */
+"SDH_SUBTITLE_FORMAT" = "%1$@ SDH";
+"EASYTOREAD_SUBTITLE_FORMAT" = "%1$@ Easy Reader";
+"CC_SUBTITLE_FORMAT" = "%1$@ CC";
+"FORCEDONLY_SUBTITLE_FORMAT" = "%1$@ Forced";
+"DESCRIBESVIDEO_SUBTITLE_FORMAT" = "%1$@ AD";
+
+/* Append a characteristic to an audio display name, e.g. "Russian (Russia) Dual Language". This characteristic will be used for voice over dubs were a narrator speaks over the main audio track in another language (e.g. Russian, Polish). */
+"VOICEOVERTRANSLATION_AUDIO_FORMAT" = "%1$@ Overdub Audio";

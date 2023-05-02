@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="auto" height="auto" viewBox="0 0 76 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>MetadataBadge_AD</title>
+    <defs>
+        <path d="M68,0 C72.418,0 76,3.582 76,8 L76,8 L76,36 C76,40.418 72.418,44 68,44 L68,44 L8,44 C3.582,44 0,40.418 0,36 L0,36 L0,8 C0,3.582 3.582,0 8,0 L8,0 Z M68,4 L8,4 C5.794,4 4,5.794 4,8 L4,8 L4,36 C4,38.206 5.794,40 8,40 L8,40 L68,40 C70.206,40 72,38.206 72,36 L72,36 L72,8 C72,5.794 70.206,4 68,4 L68,4 Z M50.484,9.995 C57.73,9.995 62,14.289 62,21.913 C62,29.535 57.73,34.013 50.484,34.013 L50.484,34.013 L41.178,34.013 L41.178,9.995 Z M30.315,9.9944 L38.717,34.0124 L33.343,34.0124 L31.503,28.1864 L23.017,28.1864 L21.175,34.0124 L15.987,34.0124 L24.373,9.9944 L30.315,9.9944 Z M49.882,14.139 L46.232,14.139 L46.232,29.851 L49.882,29.851 C54.4,29.851 56.844,27.123 56.844,21.929 C56.844,16.903 54.334,14.139 49.882,14.139 L49.882,14.139 Z M27.319,14.5884 L27.201,14.5884 L24.105,24.4264 L30.415,24.4264 L27.319,14.5884 Z" id="path-1"></path>
+    </defs>
+    <g id="MetadataBadge_AD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#9E9E9E" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
